@@ -75,3 +75,6 @@ The Holberton Smiling School web pages were developed by sections using the Boot
 # Author:
 
 Jhoan Zamora: [jzamora5](https://github.com/jzamora5)
+
+- **Foster Clark** - [fozc](https://github.com/FosterClark48) :octocat:
+- **LinkedIn** - [FosterClark12](https://www.linkedin.com/in/fosterclark12/) <img src="./images/linkedin-original.svg" alt="LinkedIn" width="20" height="20">
