@@ -18,29 +18,20 @@ function createQuoteSlide(quote) {
 }
 
 $(document).ready(function () {
-    const carouselInner = $('.carousel-inner');
-    const loader = $('.loader');
-
+    var loader = $('.loader');
     loader.show();
 
-    $.ajax({
-        url: 'https://smileschool-api.hbtn.info/quotes',
-        type: 'GET',
-        success: function (quotes) {
-            loader.hide();
-            carouselInner.empty();
+    $.get("https://smileschool-api.hbtn.info/quotes", function (data) {
+        loader.hide();
+        $('#carouselExampleControls .carousel-inner').empty();
 
-            $.each(quotes, function (index, quote) {
-                const slide = createQuoteSlide(quote);
-                if (index === 0) {
-                    slide.addClass('active');
-                }
-                carouselInner.append(slide);
-            });
-        },
-        error: function (error) {
-            loader.hide();
-            console.error('Error:', error);
-        }
+        data.forEach((quote, index) => {
+            var slide = createQuoteSlide(quote);
+            if (index === 0) {
+                slide.addClass('active');
+            }
+            $('#carouselExampleControls .carousel-inner').append(slide);
+        });
     });
 });
+
