@@ -75,24 +75,27 @@ function createCard(video) {
     return cardContainer;
 }
 
-$(document).ready(function () {
+// LATEST VIDEOS SECTION
+function populateSection(carouselSelector, url, prevArrow, nextArrow) {
     const loader = $('.loader');
     loader.show();
 
-    $.get("https://smileschool-api.hbtn.info/popular-tutorials", function (data) {
+    $.get(url, function (data) {
         loader.hide();
-        $('.carousel-inner.carousel-popular').empty();
+        $(carouselSelector).empty();
+
+        console.log(`Data fetched for ${carouselSelector}: `, data);
 
         data.forEach((video, index) => {
             const card = createCard(video);
-            $('.carousel-inner.carousel-popular').append(card);
+            $(carouselSelector).append(card);
         });
 
-        $('.carousel-inner.carousel-popular').slick({
+        $(carouselSelector).slick({
             slidesToShow: 4,
             slidesToScroll: 1,
-            prevArrow: '.slick-prev',
-            nextArrow: '.slick-next',
+            prevArrow: prevArrow,
+            nextArrow: nextArrow,
             responsive: [
                 {
                     breakpoint: 769,
@@ -108,5 +111,15 @@ $(document).ready(function () {
                 }
             ]
         });
+
+        $(prevArrow).removeClass("slick-hidden");
+        $(nextArrow).removeClass("slick-hidden");
     });
+}
+
+$(document).ready(function () {
+    console.log("Document is ready");
+
+    populateSection('.carousel-inner.carousel-popular', "https://smileschool-api.hbtn.info/popular-tutorials", '.slick-prev-popular', '.slick-next-popular');
+    populateSection('.carousel-inner.carousel-latest', 'https://smileschool-api.hbtn.info/latest-videos', '.slick-prev-latest', '.slick-next-latest');
 });
