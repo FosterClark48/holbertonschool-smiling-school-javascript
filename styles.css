@@ -322,7 +322,6 @@
 }
 
 .section .card-img-overlay {
-  /* top: 25px; */
   top: 5%;
 }
 .section .card-title {
@@ -336,78 +335,56 @@
   line-height: 24px;
 }
 
-.popular .carousel-control-prev,
-.popular .carousel-control-next {
-  width: 60px;
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.popular .carousel-control-prev.arrow-left {
-  left: var(--popular-arrows-x);
+.thumbnail-container {
+  position: relative;
+  max-height: 200px;
+  overflow: hidden;
 }
 
-.popular .carousel-control-next.arrow-right {
-  right: var(--popular-arrows-x);
+.rating {
+  display: flex;
 }
 
-@media screen and (max-width: 1280px) {
-  :root {
-    --popular-arrows-x: -4vw;
-  }
-  .section .card {
-    width: 19vw;
-  }
+/* slick */
+
+.carousel-container {
+  position: relative;
 }
 
-@media screen and (max-width: 1150px) {
-  :root {
-    --popular-arrows-x: -3vw;
-  }
-  .section .card-img-overlay {
-    /* top: 25px; */
-    top: 4%;
-  }
-  .section .card-img-overlay img {
-    width: 35%;
-  }
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 35%;
+  z-index: 1;
+  color: #333;
+  transform: translateY(-60%);  /* Adjusted value */
+  font-size: 0;
+  width: 30px;
+  height: 64px;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
-@media screen and (max-width: 991px) {
-  :root {
-    --popular-arrows-x: -3vw;
-  }
-
-  .section .card {
-    width: 16rem;
-  }
-  .section .card-img-overlay img {
-    width: 30%;
-  }
-  .section .card-img-overlay {
-    /* top: 25px; */
-    top: 5%;
-  }
+.slick-prev {
+  background: url('./images/arrow_black_left.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  left: -50px;  /* Adjusted value */
 }
 
-@media screen and (max-width: 767px) {
-  :root {
-    --popular-arrows-x: -6vw;
-  }
-  .section .card {
-    width: 16rem;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  :root {
-    --popular-arrows-x: -15px;
-  }
-  .section .card-img-overlay img {
-    width: 30%;
-  }
-  .section .card-img-overlay {
-    /* top: 25px; */
-    top: 5%;
-  }
+.slick-next {
+  background: url('./images/arrow_black_right.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  right: -50px;  /* Adjusted value */
 }
 
 /* SMILES Section  */
