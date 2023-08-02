@@ -358,11 +358,13 @@
   position: relative;
 }
 
-.slick-prev,
-.slick-next {
+.slick-prev-popular,
+.slick-next-popular,
+.slick-prev-latest,
+.slick-next-latest {
   position: absolute;
   top: 35%;
-  z-index: 1;
+  z-index: 10;
   color: #333;
   transform: translateY(-60%);  /* Adjusted value */
   font-size: 0;
@@ -371,7 +373,8 @@
   background-color: rgba(0, 0, 0, 0.0);
 }
 
-.slick-prev {
+.slick-prev-popular,
+.slick-prev-latest {
   background: url('./images/arrow_black_left.png') no-repeat;
   background-position: center;
   background-size: cover;
@@ -379,7 +382,8 @@
   left: -50px;  /* Adjusted value */
 }
 
-.slick-next {
+.slick-next-popular,
+.slick-next-latest {
   background: url('./images/arrow_black_right.png') no-repeat;
   background-position: center;
   background-size: cover;
