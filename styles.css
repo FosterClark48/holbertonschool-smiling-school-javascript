@@ -299,7 +299,7 @@
 
 /* #endregion */
 
-/* POPULAR SECTION  */
+/* #region POPULAR SECTION  */
 
 .popular {
   height: auto;
@@ -351,6 +351,8 @@
 .rating {
   display: flex;
 }
+
+/* #endregion */
 
 /* slick */
 
